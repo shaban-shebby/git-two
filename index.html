@@ -14,6 +14,7 @@
           <div class="card">
             <div class="card-title teal darken-4 white-text center-align">Login</div>
             <div class="card-content">
+              <div id="success_error" class="center"></div>
               <div class="input-field">
                 <span>Username</span>
                 <input type="text" name="username" value="" class="browser-default" id="username">
@@ -46,13 +47,37 @@
           e.preventDefault();
           username = $('#username').val();
           password = $('#password').val();
-          if (username == '') {
+          if (username == '' || password == '') {
             $('#error_username').text('Username is required');
             $('#error_username').show();
-          }
-          if (password == '') {
             $('#error_password').text('Password is required');
             $('#error_password').show();
+          }else{
+            if (username == 'shaban.shebby' && password == '123456') {
+              $('#success_error').css(
+                          {
+                            'background-color':'#b2dfdb',
+                            'color':'#004d40',
+                            'padding':'8px',
+                            'width':'95%',
+                            'margin':'auto',
+                            'border-radius':'7px',
+                            'font-weight':'bold'
+                          }
+              ).text('Valid credential').show().fadeOut(10000);
+            }else{
+              $('#success_error').css(
+                          {
+                            'background-color':'#ef9a9a',
+                            'color':'#b71c1c',
+                            'padding':'8px',
+                            'width':'95%',
+                            'margin':'auto',
+                            'border-radius':'7px',
+                            'font-weight':'bold'
+                        }
+            ).text('Username/Password is invalid').show().fadeOut(10000);
+            }
           }
         });
         $('#username').on('keyup',function(){
