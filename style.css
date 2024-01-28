@@ -1,0 +1,13 @@
+label,input{
+  width:100%;
+}
+input{
+  padding: 8px;
+}
+.card-title{
+  padding: 15px;
+  font-weight: bold;
+}
+.btn{
+  width: 100%;
+}
