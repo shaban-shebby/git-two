@@ -16,64 +16,21 @@
             <div class="card-content">
               <div class="input-field">
                 <span>Username</span>
-                <input type="text" name="username" value="" class="browser-default" id="username">
-                <span class="red-text" id="error_username"></span>
+                <input type="text" name="" value="" class="browser-default">
               </div>
               <div class="input-field">
                 <span>Password</span>
-                <input type="password" name="password" value="" class="browser-default" id="password">
-                <span class="red-text" id="error_password"></span>
+                <input type="password" name="" value="" class="browser-default">
               </div>
             </div>
             <div class="card-action">
-              <button type="submit" class="btn teal darken-4" name="button" id="btn_click">save</button>
+              <button type="submit" class="btn teal darken-4" name="button">save</button>
             </div>
           </div>
         </form>
       </div>
     </div>
-    <!-- JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        var username;
-        var password;
-        // $('#error_username').hide();
-        // $('#error_password').hide();
-        $('#btn_click').click(function(e){
-          e.preventDefault();
-          username = $('#username').val();
-          password = $('#password').val();
-          if (username == '') {
-            $('#error_username').text('Username is required');
-            $('#error_username').show();
-          }
-          if (password == '') {
-            $('#error_password').text('Password is required');
-            $('#error_password').show();
-          }
-        });
-        $('#username').on('keyup',function(){
-          username = $('#username').val();
-          if (username == '') {
-            $('#error_username').text('Username is required');
-            $('#error_username').show();
-          }else{
-            $('#error_username').hide();
-          }
-        });
-        $('#password').on('keyup',function(){
-          password = $('#password').val();
-          if (password == '') {
-            $('#error_password').text('Password is required');
-            $('#error_password').show();
-          }else{
-            $('#error_password').hide();
-          }
-        });
-      })
-    </script>
   </body>
 </html>
